@@ -4,13 +4,14 @@ import {BarChart, Bar, XAxis, YAxis, Legend} from 'recharts'
 import './index.css'
 
 const VaccinationCoverage = props => {
-  const {vaccinationCoverageDetails} = props
   const dataFormatter = number => {
     if (number > 1000) {
       return `${(number / 1000).toString()}k`
     }
     return number.toString()
   }
+
+  const {vaccinationCoverageDetails} = props
 
   return (
     <div className="vaccination-by-coverage-container">
@@ -47,6 +48,7 @@ const VaccinationCoverage = props => {
             fontFamily: 'Roboto',
           }}
         />
+
         <Bar
           dataKey="dosel"
           name="Dose 1"
@@ -54,6 +56,7 @@ const VaccinationCoverage = props => {
           radius={[10, 10, 0, 0]}
           barSize="20%"
         />
+
         <Bar
           dataKey="dose2"
           name="Dose 2"
